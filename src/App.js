@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./views/Header";
+import Body from "./views/Body";
+import React from "react";
+import {createTheme, CssBaseline} from "@mui/material";
+import {ThemeProvider} from "@emotion/react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const theme = createTheme({
+        palette: {
+            mode: 'dark',
+        },
+    });
+    return (
+        // eslint-disable-next-line react/jsx-no-undef
+        <div className="App">
+            <header className="App-header">
+                <link rel="stylesheet"
+                      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                />
+            </header>
+
+            <ThemeProvider theme={theme}>
+                <CssBaseline/>
+                <Header/>
+
+                <Body/>
+
+            </ThemeProvider>
+        </div>
+
+    );
 }
 
 export default App;

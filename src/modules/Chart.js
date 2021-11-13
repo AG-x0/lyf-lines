@@ -64,7 +64,7 @@ export default function Chart(props) {
             mode: 'dark',
         },
     });
-    // assetprice:0,multi:1,borrowapr:0,apy:0, time:1
+
     const [data, setData] = useState({});
 
 
